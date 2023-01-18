@@ -1,0 +1,42 @@
+{
+  "Vuota" : {
+    "post" : "Vuota",
+    "prezzo" : "0.70"
+  },
+  "Occhio di bue" : {
+    "post":"Occhio_di_bue",
+    "prezzo":"1.00"
+  },
+  "Nutella" : {
+    "post" : "Nutella",
+    "prezzo" : "1.50"
+  },
+  "Cotto e fontina" : {
+    "post" : "Cotto_e_fontina",
+    "prezzo" : "1.70"
+  },
+  "Prosciutto e funghi" : {
+    "post" : "Prosciutto_e_funghi",
+    "prezzo" : "1.50"
+  },
+  "Ripiena" : {
+    "post" : "Ripiena",
+    "prezzo" : "2.00"
+  },
+  "Pizza margherita" : {
+    "post" : "Pizza_margherita",
+    "prezzo" : "2.00"
+  },
+  "Salame" : {
+    "post" : "Salame",
+    "prezzo" : "1.50"
+  },
+  "Stracchino e salsiccia" : {
+    "post" : "Stracchino_e_salsiccia",
+    "prezzo" : "2.00"
+  },
+  "Estathe" : {
+    "post" : "Estathe",
+    "prezzo" : "1.00"
+  }
+}

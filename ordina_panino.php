@@ -18,7 +18,11 @@ function getOrders($filename){
 	fclose($f);
 	//deserialize JSON
 	$orders = json_decode($orders, true);
-	return $orders;
+	if($orders){
+		return $orders;
+	} else {
+		return array();
+	}
 }
 
 //write new data to file
@@ -40,15 +44,16 @@ $newdata = [
 
 $orders = getOrders($filename);
 $changed = False;
-foreach($orders as $index=>$person){
+var_dump($orders);
+foreach($orders[date("Y/m/d")] as $index=>$person){
 	if($person["nome"] == $nome && $person["classe"] == $classe){
-		$orders[$index] = $newdata;
+		$orders[date("Y/m/d")][$index] = $newdata;
 		$changed = True;
 	}
 }
 //append data
 if($changed == False){
-	$orders[] = $newdata;
+	$orders[date("Y/m/d")][] = $newdata;
 }
 //transform to JSON
 $newjson = json_encode($orders);
