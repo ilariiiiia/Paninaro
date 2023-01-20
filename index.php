@@ -4,120 +4,10 @@
     <title>Paninaro</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/d1cc6f6a/site_favicon_16_1667987083149.ico"/>
-	<script type="text/javascript" src="./scripts/main.js"></script>
+	<link rel="stylesheet" href="./style/style-index.css"/>
+	<script type="text/javascript" src="./scripts/main-index.js"></script>
 	<script type="text/javascript" src="./scripts/filemanager.js"></script>
-  </head>
-	<style>
-		html {
-			background-color: #F1F1F1;
-			color: black;
-			font-size: 35px;
-			text-align: center;
-		}
-
-		legend {
-			font-size: 25px;
-			text-align: left;
-			color: green;
-		}
-
-		body {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto;
-			height: 100vh;
-		}
-		
-		input {
-			align-items: center;
-			justify-content: center;
-			width: 80%;
-			margin: 10px;
-			padding: 15px 15px;
-			border-radius: 15px;
-			border-width: 2px;
-			border-color: darkgray;
-			background-color: #E8E8E8;
-			font-size: 20px;
-			text-align: center;
-		}
-
-		form {
-			background-color: #F1F1F1;
-			width: 90%;
-			height: 90%;
-			margin: auto;
-		}
-
-		label {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto;
-			color: green;
-		}
-		
-		select {
-			border-color: gray;
-			margin-bottom: 10px;
-			margin-top: 10px;
-		}
-
-		button {
-			border-color: gray;
-			border-radius: 10px;
-		}
-
-		th {
-			font-size: 25px;
-		}
-
-		th, td {
-		  border-bottom: 1px solid #ddd;
-		}
-
-		tt {
-			font-size: 15px;
-		}
-
-		.fullw {
-			width: 100%;
-		}
-
-		.bigborder {
-			border-bottom: 2px solid #000;
-		}
-
-		.margin16 {
-			margin: 16px;
-		}
-
-		.padding16 {
-			padding: 16px;
-		}
-
-		#smalltxt {
-			font-size: 15px;
-			color: red;
-			display: none;
-		}
-
-		.smallfont {
-			font-size: 15px;
-		}
-
-		.madetxt {
-			color: blue;
-			display: none;
-		}
-
-		.hidden {
-			display: none;
-		}
-	</style>
-	
+  </head>	
   <body onload="onload()">
 	  <div id="success" class="fullw hidden" style="background-color:green; font-size: 15px">
 		  <p>Panini ordinati con successo!</p>
@@ -187,11 +77,11 @@
 			
 			<?php
 
-function newItem($itemName, $itemPrice){
+function newItem($itemName, $itemPrice, $itemPost){
 	echo "
 		<tr>
 			<th align='left'>
-				<select name='{$itemName}' id='{$itemPrice}'>
+				<select name='{$itemPost}'>
 					<option value='0'>0</option>
 					<option value='1'>1</option>
 					<option value='2'>2</option>
@@ -209,11 +99,24 @@ function newItem($itemName, $itemPrice){
 		</tr>
 ";
 }
-$itemNames = ["Vuota", "Occhio di bue", "Nutella", "Cotto e fontina", "Prosciutto e funghi", "Ripiena","Pizza margherita", "Salame", "Stracchino e salsiccia", "Estathe"];
-$itemPrices = ["0.70", "1.00", "1.50", "1.70", "1.50", "2.00", "2.00", "1.50", "2.00", "1.00"];
+$filedata = file_get_contents('./data/prezzi.json');
+$details = json_decode($filedata);
+$itemNames = [];
+$itemPrices = [];
+$itemPost = [];
+foreach($details as $nome => $data) {
+	foreach($data as $index => $dato) {
+		if($index != "post"){
+			$itemNames[] = $nome;
+			$itemPrices[] = $dato;
+		} else {
+			$itemPost[] = $dato;
+		}
+	}
+}
 
 for($i = 0; $i<count($itemNames); $i+=1){
-	newItem($itemNames[$i], $itemPrices[$i]);
+	newItem($itemNames[$i], $itemPrices[$i], $itemPost[$i]);
 }
 	?>
 		</table>

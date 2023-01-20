@@ -1,0 +1,104 @@
+html {
+			background-color: #F1F1F1;
+			color: black;
+			font-size: 35px;
+			text-align: center;
+		}
+
+		legend {
+			font-size: 25px;
+			text-align: left;
+			color: green;
+		}
+
+		body {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			height: 100vh;
+		}
+		
+		input {
+			align-items: center;
+			justify-content: center;
+			width: 80%;
+			margin: 10px;
+			padding: 15px 15px;
+			border-radius: 15px;
+			border-width: 2px;
+			border-color: darkgray;
+			background-color: #E8E8E8;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		form {
+			background-color: #F1F1F1;
+			width: 90%;
+			height: 90%;
+			margin: auto;
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			color: green;
+		}
+		
+		select {
+			border-color: gray;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+
+		button {
+			border-color: gray;
+			border-radius: 10px;
+		}
+
+		th {
+			font-size: 25px;
+		}
+
+		th, td {
+		  border-bottom: 1px solid #ddd;
+		}
+
+		tt {
+			font-size: 15px;
+		}
+
+		.fullw {
+			width: 100%;
+		}
+
+		.bigborder {
+			border-bottom: 2px solid #000;
+		}
+
+		.margin16 {
+			margin: 16px;
+		}
+
+		.padding16 {
+			padding: 16px;
+		}
+
+		#smalltxt {
+			font-size: 15px;
+			color: red;
+			display: none;
+		}
+
+		.madetxt {
+			color: blue;
+			display: none;
+		}
+
+		.hidden {
+			display: none;
+		}
