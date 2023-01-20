@@ -223,6 +223,7 @@ for($i = 0; $i<count($itemNames); $i+=1){
 		</fieldset>
 		<div class="fullwidth margin16 padding16">
 		  	<p>Se vuoi vedere gli ordini della tua classe, clicca <a href="./ordini_classe.php">qui</a></p>
+			<p style="font-size: 15px;">Ordinando, accetti che <a href="./privacy_policy.php">la tua privacy</a> è inesistente.</p>
 		</div>
 	  </form>
   </body>

@@ -1,4 +1,5 @@
 <?php
+echo "<script>localStorage.success = 0;</script>";
 $nome = $_POST["nome"];
 $classe = $_POST["classe"] . $_POST["sezione"];
 $vuote = $_POST["Vuota"];
@@ -44,7 +45,6 @@ $newdata = [
 
 $orders = getOrders($filename);
 $changed = False;
-var_dump($orders);
 foreach($orders[date("Y/m/d")] as $index=>$person){
 	if($person["nome"] == $nome && $person["classe"] == $classe){
 		$orders[date("Y/m/d")][$index] = $newdata;
@@ -59,5 +59,6 @@ if($changed == False){
 $newjson = json_encode($orders);
 //rewrite file
 file_put_contents($filename, $newjson);
-echo "<script>location.href = '/?s=1'</script>";
+echo "<script>localStorage.success = 1;</script>";
+echo "<script>location.href = './'</script>";
 ?>

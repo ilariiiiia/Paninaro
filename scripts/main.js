@@ -7,8 +7,8 @@ function save(getFromLocal){
 	var name = n.value;
 	var classe = id("classe").value + id("sezione").value;
 	if(getFromLocal){
-		name = localStorage.nome;
-		classe = localStorage.classe;
+		name = name || localStorage.nome;
+		classe = classe || localStorage.classe;
 	}
 	if(name && classe){
 		localStorage.nome = name;
@@ -105,16 +105,13 @@ function aggiungiItem(qty, nome, prezzo, border){
 
 function onload(){
 	updateLabels()
-	const DOMAINLENGTH = 34
-	if(location.href.substr(DOMAINLENGTH) != "/"){
-		//check s value in URL
-		let a = location.href.substr(34);
-		let s = a.charAt(a.indexOf("s") + 2);
-		if(s == "1"){
-		  id("success").style.display = "block";
-		} else {
-		  id("failed").style.display = "block";
-		}
+	let s = localStorage.success
+	if(s == "1"){
+	  id("success").style.display = "block";
+		localStorage.success = "";
+	} else if (s == "0") {
+	  id("failed").style.display = "block";
+		localStorage.success = "";
 	}
 	updateCart();
 }

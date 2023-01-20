@@ -7,17 +7,21 @@
     "post":"Occhio_di_bue",
     "prezzo":"1.00"
   },
+  "Saccotino al cioccolato" : {
+	  "post":"Saccotino_al_cioccolato",
+	  "prezzo":"1.00"
+  }
   "Nutella" : {
     "post" : "Nutella",
-    "prezzo" : "1.50"
+    "prezzo" : "2.00"
   },
   "Cotto e fontina" : {
     "post" : "Cotto_e_fontina",
-    "prezzo" : "1.70"
+    "prezzo" : "2.00"
   },
   "Prosciutto e funghi" : {
     "post" : "Prosciutto_e_funghi",
-    "prezzo" : "1.50"
+    "prezzo" : "2.00"
   },
   "Ripiena" : {
     "post" : "Ripiena",
@@ -25,18 +29,22 @@
   },
   "Pizza margherita" : {
     "post" : "Pizza_margherita",
-    "prezzo" : "2.00"
+    "prezzo" : "1.50"
   },
   "Salame" : {
     "post" : "Salame",
-    "prezzo" : "1.50"
+    "prezzo" : "2.00"
   },
   "Stracchino e salsiccia" : {
     "post" : "Stracchino_e_salsiccia",
     "prezzo" : "2.00"
   },
+  "Acqua" : {
+    "post" : "Acqua",
+    "prezzo" : "0.70"
+  },
   "Estathe" : {
     "post" : "Estathe",
-    "prezzo" : "1.00"
+    "prezzo" : "1.20"
   }
 }
